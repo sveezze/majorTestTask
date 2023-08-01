@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\FullStack.API",
+    "\\FullStack.API\\Controllers",
+    "\\FullStack.API\\Data"
+  ],
+  "SelectedNode": "\\FullStack.API\\Data\\FullStackDbContext.cs",
+  "PreviewInSolutionExplorer": false
+}

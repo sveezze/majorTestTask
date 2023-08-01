@@ -1,0 +1,19 @@
+<div class="container my-4">
+    <h1 class="mb-3"></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Producer</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let videocard of videocards">
+                <td>{{ videocard.producer }}</td>
+                <td>{{ videocard.model }}</td>
+                <td>{{ videocard.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -3,7 +3,7 @@
     public class Videocard
     {
         public Guid Id { get; set; }
-        public string producer { get; set; }
+        public Guid producerId { get; set; }
         public string model { get; set; }
         public decimal price { get; set; }
     }

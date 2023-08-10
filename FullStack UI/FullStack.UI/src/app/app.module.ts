@@ -7,19 +7,23 @@ import { VideocardsListComponent } from './components/videocards/videocards-list
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AddVideocardComponent } from './components/videocards/add-videocard/add-videocard.component';
 import { FormsModule } from '@angular/forms';
+import { EditVideocardComponent } from './components/videocards/edit-videocard/edit-videocard.component';
+import {DxSelectBoxModule} from "devextreme-angular";
 
 @NgModule({
   declarations: [
     AppComponent,
     VideocardsListComponent,
-    AddVideocardComponent
+    AddVideocardComponent,
+    EditVideocardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        DxSelectBoxModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

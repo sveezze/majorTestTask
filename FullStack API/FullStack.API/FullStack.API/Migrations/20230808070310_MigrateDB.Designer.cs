@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FullStack.API.Migrations
 {
     [DbContext(typeof(FullStackDbContext))]
-    [Migration("20230731171221_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20230808070310_MigrateDB")]
+    partial class MigrateDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,20 @@ namespace FullStack.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("FullStack.API.models.Producer", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("producer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Producers");
+                });
+
             modelBuilder.Entity("FullStack.API.models.Videocard", b =>
                 {
                     b.Property<Guid>("Id")
@@ -34,11 +48,11 @@ namespace FullStack.API.Migrations
                     b.Property<string>("model")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("price")
-                        .HasColumnType("bigint");
+                    b.Property<decimal>("price")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("producer")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("producerId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 

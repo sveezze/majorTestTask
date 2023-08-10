@@ -3,8 +3,9 @@
     "",
     "\\FullStack.API",
     "\\FullStack.API\\Controllers",
-    "\\FullStack.API\\Data"
+    "\\FullStack.API\\Data",
+    "\\FullStack.API\\models"
   ],
-  "SelectedNode": "\\FullStack.API\\Data\\FullStackDbContext.cs",
+  "SelectedNode": "\\FullStack.API.sln",
   "PreviewInSolutionExplorer": false
 }

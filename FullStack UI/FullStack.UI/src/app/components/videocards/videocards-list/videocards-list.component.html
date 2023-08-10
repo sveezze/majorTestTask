@@ -6,13 +6,15 @@
                 <th>Producer</th>
                 <th>Model</th>
                 <th>Price</th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let videocard of videocards">
-                <td>{{ videocard.producer }}</td>
+                <td>{{ videocard.producerId }}</td>
                 <td>{{ videocard.model }}</td>
                 <td>{{ videocard.price }}</td>
+                <td><a [routerLink]="['/videocards', 'edit', videocard.id]">View</a></td>
             </tr>
         </tbody>
     </table>

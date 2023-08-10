@@ -1,6 +1,6 @@
 export interface Videocard {
     id: string;
-    producer: string;
+    producerId: string;
     model: string;
     price: number;
 }

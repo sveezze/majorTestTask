@@ -10,9 +10,7 @@ import { VideocardsService } from 'src/app/services/videocards.service';
 export class VideocardsListComponent implements OnInit {
 
   videocards: Videocard[] = [];
-  filter = "";
-  // filteredList
-  // filter
+
   constructor(private videocardsService: VideocardsService){}
 
   ngOnInit(): void {
@@ -24,7 +22,4 @@ export class VideocardsListComponent implements OnInit {
     })
   }
 
-  filtration(e: any) {
-    console.log(e);
-  }
 }

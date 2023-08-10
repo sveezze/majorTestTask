@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 class="mb-3">Edit videocard</h1>
+    <div class="row">
+      <div class="col-6">
+        <form #form="ngForm" (ngSubmit)="updateVideocard()">
+            <div class="mb-3">
+                <label for="id " class="form-label">Id</label>
+                <input type="text" class="form-control" id="id" readonly
+                name="id" [(ngModel)]="videocardDetails.producerId">
+              </div>
+          <div class="mb-3">
+            <label for="producer " class="form-label">Producer</label>
+            <input type="text" class="form-control" id="producer" 
+            name="producer" [(ngModel)]="videocardDetails.producerId">
+          </div>
+          <div class="mb-3">
+            <label for="model" class="form-label">Model</label>
+            <input type="text" class="form-control" id="model" 
+            name="model" [(ngModel)]="videocardDetails.model">
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" 
+            name="price" [(ngModel)]="videocardDetails.price">
+          </div>
+          <button type="submit" class="btn btn-primary mr-5">save</button>
+          <button type="button" class="btn btn-danger" 
+          (click)="deleteVideocard(videocardDetails.id)">delete</button>
+        </form>
+      </div>
+    </div>
+</div>

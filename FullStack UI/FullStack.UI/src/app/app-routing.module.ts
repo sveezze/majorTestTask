@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VideocardsListComponent } from './components/videocards/videocards-list/videocards-list.component';
 import { AddVideocardComponent } from './components/videocards/add-videocard/add-videocard.component';
+import { EditVideocardComponent } from './components/videocards/edit-videocard/edit-videocard.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: VideocardsListComponent
+    component: AddVideocardComponent 
   },
   {
     path: 'videocards',
@@ -14,7 +15,11 @@ const routes: Routes = [
   },
   {
     path: 'videocards/add',
-    component: AddVideocardComponent 
+    component: AddVideocardComponent
+  },
+  {
+    path: 'videocards/edit/:id',
+    component: EditVideocardComponent
   }
 ];
 

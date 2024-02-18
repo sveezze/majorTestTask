@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DxDataGridModule } from 'devextreme-angular';
-import { ProductsComponentComponent } from './products-component.component';
+import { ProductsComponent } from './products.component';
 
 
 
 @NgModule({
   declarations: [
-    ProductsComponentComponent
+    ProductsComponent
   ],
   imports: [
     DxDataGridModule

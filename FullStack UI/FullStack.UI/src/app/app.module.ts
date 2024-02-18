@@ -7,7 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {DxSelectBoxModule} from "devextreme-angular";
 import { UserComponentComponent } from './components/user-component/user-component.component';
-import { ProductsComponentComponent } from './components/products-component/products-component.component';
+import { ProductsComponent } from './components/products-component/products.component';
 import { ProductsCountComponent } from './components/products-count/products-count.component';
 import { RequestsComponentComponent } from './components/requests-component/requests-component.component';
 import { SalesComponentComponent } from './components/sales-component/sales-component.component';

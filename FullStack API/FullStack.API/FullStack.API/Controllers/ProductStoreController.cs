@@ -20,7 +20,7 @@ namespace FullStack.API.Controllers
         public async Task<IActionResult> GetProducts()
         {
             string connectionString = _configuration.GetConnectionString("FullStackConnectionString");
-            string query = "SELECT P.title, P.price, P.UOM, WO.priceForSale FROM Products P JOIN WOProducts WO ON P.id1 = WO.id1";
+            string query = "SELECT P.title, P.price, P.UOM, S.priceForSale FROM Products P JOIN Sale S ON P.id1 = S.id1";
             var result = new DataTable();
 
             using (SqlConnection connection = new SqlConnection(connectionString))

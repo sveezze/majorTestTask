@@ -7,20 +7,20 @@ namespace FullStack.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class VideocardsController : Controller
+    public class ProductStoreController : Controller
     {
-        private readonly FullStackDbContext _fullStackDbContext;
+        private readonly FullStackDbContext db;
 
-        public VideocardsController(FullStackDbContext fullStackDbContext)
+        public ProductStoreController(FullStackDbContext fullStackDbContext)
         {
-            _fullStackDbContext = fullStackDbContext;
+            db = fullStackDbContext;
         }
         [HttpGet]
         public async Task<IActionResult> GetAllVideocards()
         {
-            var videocards = await _fullStackDbContext.Videocards.ToListAsync();
+            var products = await db.Products.ToListAsync();
 
-            return Ok(videocards);
+            return Ok(products);
         }
 
 
@@ -83,7 +83,7 @@ namespace FullStack.API.Controllers
             return Ok(videocard);
         }
         [HttpPost("[action]")]
-        public async Task<IActionResult> PostProducer([FromBody] Producer producerPost)
+        public async Task<IActionResult> PostProducer([FromBody] Products producerPost)
         {
             producerPost.Id = Guid.NewGuid();
             await _fullStackDbContext.Producers.AddAsync(producerPost);

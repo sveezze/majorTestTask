@@ -9,7 +9,6 @@ namespace FullStack.API.Data
         {
         }
 
-        public DbSet<Videocard> Videocards { get; set; }
-        public DbSet<Producer> Producers { get; set; }
+        public DbSet<Products> Products { get; set; }
     }
 }

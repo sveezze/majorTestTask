@@ -1,9 +1,13 @@
-﻿namespace FullStack.API.models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FullStack.API.models;
 
 public class Products
 {
-	public Guid Id { get; set; }
+    [Key]
+	public int id1 { get; set; }
 	public string title { get; set; }
     public string category { get; set; }
     public int price { get; set; }
+    public string UOM { get; set; }
 }

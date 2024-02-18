@@ -3,19 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { VideocardsListComponent } from './components/videocards/videocards-list/videocards-list.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { AddVideocardComponent } from './components/videocards/add-videocard/add-videocard.component';
 import { FormsModule } from '@angular/forms';
-import { EditVideocardComponent } from './components/videocards/edit-videocard/edit-videocard.component';
 import {DxSelectBoxModule} from "devextreme-angular";
+import { UserComponentComponent } from './components/user-component/user-component.component';
+import { ProductsComponentComponent } from './components/products-component/products-component.component';
+import { ProductsCountComponent } from './components/products-count/products-count.component';
+import { RequestsComponentComponent } from './components/requests-component/requests-component.component';
+import { SalesComponentComponent } from './components/sales-component/sales-component.component';
+import { SuppliersComponentComponent } from './components/suppliers-component/suppliers-component.component';
+import { WarehouseComponentComponent } from './components/warehouse-component/warehouse-component.component';
+import { ReviewComponentComponent } from './components/review-component/review-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VideocardsListComponent,
-    AddVideocardComponent,
-    EditVideocardComponent
+    UserComponentComponent,
+    ProductsCountComponent,
+    RequestsComponentComponent,
+    SalesComponentComponent,
+    SuppliersComponentComponent,
+    WarehouseComponentComponent,
+    ReviewComponentComponent
   ],
     imports: [
         BrowserModule,

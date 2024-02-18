@@ -1,25 +1,47 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VideocardsListComponent } from './components/videocards/videocards-list/videocards-list.component';
-import { AddVideocardComponent } from './components/videocards/add-videocard/add-videocard.component';
-import { EditVideocardComponent } from './components/videocards/edit-videocard/edit-videocard.component';
+import { UserComponentComponent } from './components/user-component/user-component.component';
+import { ProductsComponentComponent } from './components/products-component/products-component.component';
+import { ProductsCountComponent } from './components/products-count/products-count.component';
+import { RequestsComponentComponent } from './components/requests-component/requests-component.component';
+import { SuppliersComponentComponent } from './components/suppliers-component/suppliers-component.component';
+import { WarehouseComponentComponent } from './components/warehouse-component/warehouse-component.component';
+import { SalesComponentComponent } from './components/sales-component/sales-component.component';
+import { ReviewComponentComponent } from './components/review-component/review-component.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: AddVideocardComponent 
+    path: 'user',
+    component: UserComponentComponent
   },
   {
-    path: 'videocards',
-    component: VideocardsListComponent
+    path: 'products',
+    component: ProductsComponentComponent
   },
   {
-    path: 'videocards/add',
-    component: AddVideocardComponent
+    path: 'products/count',
+    component: ProductsCountComponent
   },
   {
-    path: 'videocards/edit/:id',
-    component: EditVideocardComponent
+    path: 'requests',
+    component: RequestsComponentComponent
+  },
+  {
+    path: 'suppliers',
+    component: SuppliersComponentComponent
+  
+  },
+  {
+    path: 'warehouse',
+    component: WarehouseComponentComponent
+  },
+  {
+    path: 'sales',
+    component: SalesComponentComponent
+  },
+  {
+    path: 'review',
+    component: ReviewComponentComponent
   }
 ];
 

@@ -3935,19 +3935,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sveez\\.nuget\\packages\\": {}
+    "C:\\Users\\pakho\\.nuget\\packages\\": {},
+    "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sveez\\MySite\\FullStack API\\FullStack.API\\FullStack.API\\FullStack.API.csproj",
+      "projectUniqueName": "C:\\Users\\pakho\\Documents\\majorTask\\majorTestTask\\FullStack API\\FullStack.API\\FullStack.API\\FullStack.API.csproj",
       "projectName": "FullStack.API",
-      "projectPath": "C:\\Users\\sveez\\MySite\\FullStack API\\FullStack.API\\FullStack.API\\FullStack.API.csproj",
-      "packagesPath": "C:\\Users\\sveez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sveez\\MySite\\FullStack API\\FullStack.API\\FullStack.API\\obj\\",
+      "projectPath": "C:\\Users\\pakho\\Documents\\majorTask\\majorTestTask\\FullStack API\\FullStack.API\\FullStack.API\\FullStack.API.csproj",
+      "packagesPath": "C:\\Users\\pakho\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pakho\\Documents\\majorTask\\majorTestTask\\FullStack API\\FullStack.API\\FullStack.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\sveez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pakho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.2.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3955,7 +3963,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Program Files\\DevExpress 23.2\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4008,7 +4017,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,10 @@
 <div class="products-table">
-    <dx-data-grid id="title" [dataSource]="products">
+    <dx-data-grid id="title" [dataSource]="products" width="100%">
         <dxi-column dataField="title" width="100" caption="Товар"></dxi-column>
         <dxi-column dataField="uom" width="150" caption="Единица измерения"></dxi-column>
         <dxi-column dataField="price" width="85" caption="Цена, руб."></dxi-column>
         <dxi-column dataField="priceForSale" width="130" caption="Цена со скидкой"></dxi-column>
     </dx-data-grid>
 </div>
+<dx-load-panel
+[visible]="isLoadPanelVisible"></dx-load-panel>

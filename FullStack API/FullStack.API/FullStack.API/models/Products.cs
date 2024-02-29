@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace FullStack.API.models;
+﻿namespace FullStack.API.models;
 
 public class Products
 {

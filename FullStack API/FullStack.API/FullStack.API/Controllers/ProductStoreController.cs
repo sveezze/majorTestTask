@@ -17,7 +17,7 @@ namespace FullStack.API.Controllers
             _configuration = configuration;
         }
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetProducts()
+        public async Task<List<Products>> GetProductsWithSale()
         {
             string connectionString = _configuration.GetConnectionString("FullStackConnectionString");
             string query = "SELECT P.title, P.price, P.UOM, S.priceForSale FROM Products P LEFT JOIN Sale S ON P.id1 = S.id1";
@@ -43,7 +43,35 @@ namespace FullStack.API.Controllers
                 UOM = x["UOM"].ToString(),
                 priceForSale = x["priceForSale"].ToString()
             }).ToList();
-            return Json(data);
+            return data;
+        }
+        [HttpGet("[action]")]
+        public async Task<List<Products2Buy>> GetProductsToBuy()
+        {
+
+            string connectionString = _configuration.GetConnectionString("FullStackConnectionString");
+            string query = "SELECT TOP (1000) [id5], [productsToBuy], [priceOfP2B] FROM [mireaDbTask].[dbo].[Products2Buy]";
+            var result = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.CommandTimeout = 3000;
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+
+                    da.Fill(result);
+                }
+                connection.Close();
+            }
+            var data = result.AsEnumerable().Select(x => new Products2Buy()
+            {
+                productsToBuy = x["productsToBuy"].ToString(),
+                priceOfP2B = (int)x["priceOfP2B"]
+            }).ToList();
+            return data;
         }
     }
 }

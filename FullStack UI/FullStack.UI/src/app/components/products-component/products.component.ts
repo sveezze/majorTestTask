@@ -9,6 +9,7 @@ import { ProductStoreService } from 'src/app/services/productstore.service';
 export class ProductsComponent implements OnInit{
 
   public products: any;
+  public isLoadPanelVisible = true;
 
   constructor(
     private productStoreService: ProductStoreService
@@ -16,9 +17,10 @@ export class ProductsComponent implements OnInit{
 
    ngOnInit(){
 
-    this.productStoreService.getProductsInfo()
+    this.productStoreService.GetProductsWithSale()
       .subscribe(x => {
         this.products = x;
       })
+      this.isLoadPanelVisible = false;
    }
 }

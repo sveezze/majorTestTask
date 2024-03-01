@@ -17,7 +17,7 @@ export class RequestsComponent implements OnInit{
 
    ngOnInit(){
 
-    this.productStoreService.GetBoughtProducts()
+    this.productStoreService.GetProductsToBuy()
       .subscribe(x => {
         this.productsToBuy = x;
       })

@@ -8,14 +8,12 @@ import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './components/products-component/products.component';
 import { RequestsComponent } from './components/requests-component/requests-component.component';
 import { DxDataGridModule, DxLoadPanelModule } from 'devextreme-angular';
-import { ReadyRequestsComponent } from './components/ready-requests/ready-requests.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RequestsComponent,
     ProductsComponent,
-    ReadyRequestsComponent
   ],
     imports: [
         BrowserModule,

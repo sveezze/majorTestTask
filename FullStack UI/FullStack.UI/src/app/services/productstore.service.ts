@@ -16,7 +16,7 @@ export class ProductStoreService {
   GetProductsWithSale(): Observable<[]> {
     return this.http.get<[]>(this.baseApiUrl + '/api/ProductStore/GetProductsWithSale');
   }
-  GetProductsToBuy(): Observable<[ProductsToBuyModel]>{
-    return this.http.get<[ProductsToBuyModel]>(this.baseApiUrl + '/api/ProductStore/GetProductsToBuy');
+  GetBoughtProducts(): Observable<[ProductsToBuyModel]>{
+    return this.http.get<[ProductsToBuyModel]>(this.baseApiUrl + '/api/ProductStore/GetBoughtProducts');
   }
 }

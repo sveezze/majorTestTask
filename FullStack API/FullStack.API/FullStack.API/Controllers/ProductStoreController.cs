@@ -46,7 +46,7 @@ namespace FullStack.API.Controllers
             return data;
         }
         [HttpGet("[action]")]
-        public async Task<List<Products2Buy>> GetProductsToBuy()
+        public async Task<List<Products2Buy>> GetBoughtProducts()
         {
 
             string connectionString = _configuration.GetConnectionString("FullStackConnectionString");

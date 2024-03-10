@@ -3,6 +3,18 @@
         <dxi-column dataField="productsToBuy" width="170" caption="Продукты на закупку"></dxi-column>
         <dxi-column dataField="priceOfP2B" width="70" caption="Цена, р"></dxi-column>
         <dxi-column dataField="amount" width="70" caption="Кол-во"></dxi-column>
+        <dxi-column cellTemplate="buyTemplate"></dxi-column>
     </dx-data-grid>
+    <ng-template #buyTemplate let-data>
+        <dx-button stylingMode="contained" text="Купить" type="success" [width]="120" (onClick)="openPop()">
+        </dx-button>
+    </ng-template>
 </div>
+<dx-popup [visible]="popupVisible" [showTitle]="false" [width]="300" [height]="120">
+    <div class="dx-field-value">
+        <dx-text-box [(value)]="amount" width="100"></dx-text-box>
+        <dx-button [text]="isValueNull(amount)" [width]="100" (onClick)="buyPr()">
+        </dx-button>
+    </div>
+</dx-popup>
 <dx-load-panel [visible]="isLoadPanelVisible"></dx-load-panel>

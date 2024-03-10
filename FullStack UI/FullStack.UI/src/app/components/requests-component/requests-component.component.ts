@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductStoreService } from 'src/app/services/productstore.service';
 
 @Component({
@@ -8,8 +8,10 @@ import { ProductStoreService } from 'src/app/services/productstore.service';
 })
 export class RequestsComponent implements OnInit{
 
+  public popupVisible: boolean = false;
   public productsToBuy: any;
   public isLoadPanelVisible = true;
+  public amount: string = '';
 
   constructor(
     private productStoreService: ProductStoreService
@@ -22,5 +24,18 @@ export class RequestsComponent implements OnInit{
         this.productsToBuy = x;
       })
       this.isLoadPanelVisible = false;
+   }
+   openPop(){
+    this.popupVisible = true;
+   }
+   buyPr(){
+    this.popupVisible = false;
+   }
+   isValueNull(amount: string){
+    if(amount == ''){
+      return 'закрыть';
+    }
+    else
+      return 'купить'
    }
 }

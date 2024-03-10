@@ -4,5 +4,6 @@
     {
         public string productsToBuy { get; set; }
         public int priceOfP2B { get; set; }
+        public int amount { get; set; }
     }
 }

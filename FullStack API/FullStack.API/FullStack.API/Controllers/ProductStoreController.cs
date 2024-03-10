@@ -50,7 +50,7 @@ namespace FullStack.API.Controllers
         {
 
             string connectionString = _configuration.GetConnectionString("FullStackConnectionString");
-            string query = "SELECT TOP (1000) [id5], [productsToBuy], [priceOfP2B] FROM [mireaDbTask].[dbo].[Products2Buy]";
+            string query = "SELECT TOP (1000) [id5], [productsToBuy], [priceOfP2B], [amount] FROM [mireaDbTask].[dbo].[Products2Buy]";
             var result = new DataTable();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -69,7 +69,38 @@ namespace FullStack.API.Controllers
             var data = result.AsEnumerable().Select(x => new Products2Buy()
             {
                 productsToBuy = x["productsToBuy"].ToString(),
-                priceOfP2B = (int)x["priceOfP2B"]
+                priceOfP2B = (int)x["priceOfP2B"],
+                amount = (int)x["amount"]
+            }).ToList();
+            return data;
+        }
+        [HttpGet("[action]")]
+        public async Task<List<RequestModel>> GetRequestProducts()
+        {
+
+            string connectionString = _configuration.GetConnectionString("FullStackConnectionString");
+            string query = "SELECT TOP (1000) [requestDate], [adress], R.[amount], P2b.productsToBuy FROM [mireaDbTask].[dbo].[Request] R left join Products2Buy P2b on P2b.id5 = R.id5";
+            var result = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.CommandTimeout = 3000;
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+
+                    da.Fill(result);
+                }
+                connection.Close();
+            }
+            var data = result.AsEnumerable().Select(x => new RequestModel()
+            {
+                requestDate = (DateTime)x["requestDate"],
+                amount = (int)x["amount"],
+                adress = (string)x["adress"],
+                productsToBuy = (string)x["productsToBuy"]
             }).ToList();
             return data;
         }

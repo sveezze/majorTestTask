@@ -1,0 +1,9 @@
+<div class="products-table">
+    <dx-data-grid id="productsToBuy" [dataSource]="requests">
+        <dxi-column dataField="requestDate" width="170" caption="Продукты на закупку"></dxi-column>
+        <dxi-column dataField="amount" width="70" caption="Кол-во"></dxi-column>
+        <dxi-column dataField="adress" width="70" caption="Адрес"></dxi-column>
+        <dxi-column dataField="productsToBuy" width="70" caption="продукт"></dxi-column>
+    </dx-data-grid>
+</div>
+<dx-load-panel [visible]="isLoadPanelVisible"></dx-load-panel>

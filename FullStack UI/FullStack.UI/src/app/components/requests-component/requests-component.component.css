@@ -2,3 +2,13 @@
     margin-top: 20px;
     margin-left: 50px;
 }
+.popup-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .buttons-container {
+    margin-right: 10px;
+  }
+  

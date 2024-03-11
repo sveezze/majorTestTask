@@ -8,6 +8,7 @@ import { ProductStoreService } from 'src/app/services/productstore.service';
 })
 export class RequestsComponent implements OnInit{
 
+  public popupText: string = '';
   public popupVisible: boolean = false;
   public productsToBuy: any;
   public isLoadPanelVisible = true;
@@ -25,7 +26,8 @@ export class RequestsComponent implements OnInit{
       })
       this.isLoadPanelVisible = false;
    }
-   openPop(){
+   openPop(e: any){
+    this.popupText = e.value;
     this.popupVisible = true;
    }
    buyPr(){

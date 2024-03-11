@@ -15,7 +15,7 @@
 <dx-popup [visible]="popupVisible" [width]="300" [height]="130" title="{{popupText}}">
     <div class="popup-container">
         <div class="buttons-container">
-            <dx-button [text]="isValueNull(amount)" [width]="100" (onClick)="buyPr()"></dx-button>
+            <dx-button [text]="isValueNull(amount)" [width]="100" (onClick)="buyPr(amount)"></dx-button>
         </div>
         <dx-text-box [(value)]="amount" width="100"></dx-text-box>
     </div>

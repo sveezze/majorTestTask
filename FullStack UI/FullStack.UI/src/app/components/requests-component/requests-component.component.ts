@@ -26,13 +26,16 @@ export class RequestsComponent implements OnInit{
       })
       this.isLoadPanelVisible = false;
    }
+   
    openPop(e: any){
     this.popupText = e.value;
     this.popupVisible = true;
    }
+
    buyPr(){
     this.popupVisible = false;
    }
+
    isValueNull(amount: string){
     if(amount == ''){
       return 'закрыть';

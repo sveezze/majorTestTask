@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { finalize, timeout } from 'rxjs';
 import { ProductStoreService } from 'src/app/services/productstore.service';
 
 @Component({
@@ -33,9 +34,16 @@ export class RequestsComponent implements OnInit{
    }
 
    buyPr(amountOfP: string){
-    let num = parseInt(amountOfP);
+    this.productStoreService.BuyProductsForWO(amountOfP).pipe(
+        finalize(() => {
+            this.productStoreService.GetProductsToBuy().subscribe(x => {
+                this.productsToBuy = x;
+            });
+        })
+    ).subscribe(x => {
+    });
     this.popupVisible = false;
-   }
+}
 
    isValueNull(amount: string){
     if(amount == ''){

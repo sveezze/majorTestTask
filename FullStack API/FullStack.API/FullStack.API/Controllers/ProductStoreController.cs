@@ -104,5 +104,28 @@ namespace FullStack.API.Controllers
             }).ToList();
             return data;
         }
+        [HttpGet("[action]")]
+        public async Task<DataTable> BuyProductsForWO(string amount)
+        {
+            string connectionString = _configuration.GetConnectionString("FullStackConnectionString");
+            string query = "update [mireaDbTask].[dbo].[Products2Buy] set amount = prevAmount - " + amount + " update [mireaDbTask].[dbo].[Products2Buy] set prevAmount = amount";
+            var result = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.CommandTimeout = 3000;
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+
+                    da.Fill(result);
+                }
+                connection.Close();
+            }
+            return result;
+        }
+
     }
 }

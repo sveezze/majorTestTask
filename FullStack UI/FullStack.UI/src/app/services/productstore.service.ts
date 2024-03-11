@@ -17,10 +17,14 @@ export class ProductStoreService {
   GetProductsWithSale(): Observable<[]> {
     return this.http.get<[]>(this.baseApiUrl + '/api/ProductStore/GetProductsWithSale');
   }
-  GetProductsToBuy(): Observable<[ProductsToBuyModel]>{
+  GetProductsToBuy(): Observable<[ProductsToBuyModel]> {
     return this.http.get<[ProductsToBuyModel]>(this.baseApiUrl + '/api/ProductStore/GetProductsToBuy');
   }
-  GetRequestProducts(): Observable<[RequestMadeModel]>{
+  GetRequestProducts(): Observable<[RequestMadeModel]> {
     return this.http.get<[RequestMadeModel]>(this.baseApiUrl + '/api/ProductStore/GetRequestProducts');
+  }
+
+  BuyProductsForWO(amountOfP: string): Observable<any> {
+    return this.http.get<any>(this.baseApiUrl + `/api/ProductStore/BuyProductsForWO?amount=${amountOfP}`);
   }
 }

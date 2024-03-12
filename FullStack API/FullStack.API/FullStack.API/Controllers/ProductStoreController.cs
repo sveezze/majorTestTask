@@ -108,7 +108,7 @@ namespace FullStack.API.Controllers
         public async Task<DataTable> BuyProductsForWO(string amount)
         {
             string connectionString = _configuration.GetConnectionString("FullStackConnectionString");
-            string query = "update [mireaDbTask].[dbo].[Products2Buy] set amount = prevAmount - " + amount + " update [mireaDbTask].[dbo].[Products2Buy] set prevAmount = amount";
+            string query = "update [mireaDbTask].[dbo].[Products2Buy] set amount = prevAmount - " + amount;
             var result = new DataTable();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -126,6 +126,33 @@ namespace FullStack.API.Controllers
             }
             return result;
         }
+        [HttpGet("[action]")]
+        public async Task<List<Comments>> CheckComments()
+        {
+            string connectionString = _configuration.GetConnectionString("FullStackConnectionString");
+            string query = "SELECT C.text, P.title, P2B.productsToBuy\r\n  FROM [mireaDbTask].[dbo].[Comments] C\r\n  left join Products P ON P.id1 = C.id1\r\n  left join Products2Buy P2B ON P2B.id5 = C.id5";
+            var result = new DataTable();
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.CommandTimeout = 3000;
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+
+                    da.Fill(result);
+                }
+                connection.Close();
+            }
+            var data = result.AsEnumerable().Select(x => new Comments()
+            {
+                title = x["title"].ToString(),
+                productsToBuy = x["productsToBuy"].ToString(),
+                text = x["text"].ToString(),
+            }).ToList();
+            return data;
+        }
     }
 }

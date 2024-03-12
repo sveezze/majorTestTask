@@ -9,6 +9,7 @@ import { ProductsComponent } from './components/products-component/products.comp
 import { RequestsComponent } from './components/requests-component/requests-component.component';
 import { DxButtonModule, DxDataGridModule, DxLoadPanelModule, DxPopupModule, DxTemplateModule, DxTextBoxModule } from 'devextreme-angular';
 import { RequestsMadeComponent } from './components/requests-made/requests-made.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { RequestsMadeComponent } from './components/requests-made/requests-made.
     RequestsComponent,
     ProductsComponent,
     RequestsMadeComponent,
+    CommentsComponent,
   ],
     imports: [
         BrowserModule,

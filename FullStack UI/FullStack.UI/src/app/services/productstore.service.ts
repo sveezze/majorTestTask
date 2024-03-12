@@ -27,4 +27,7 @@ export class ProductStoreService {
   BuyProductsForWO(amountOfP: string): Observable<any> {
     return this.http.get<any>(this.baseApiUrl + `/api/ProductStore/BuyProductsForWO?amount=${amountOfP}`);
   }
+  CheckComments(): Observable<[]> {
+    return this.http.get<[]>(this.baseApiUrl + '/api/ProductStore/CheckComments');
+  }
 }

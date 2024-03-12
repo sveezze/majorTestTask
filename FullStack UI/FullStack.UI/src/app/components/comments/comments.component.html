@@ -1,0 +1,9 @@
+<div class="products-table">
+    <dx-data-grid id="title" [dataSource]="comments">
+        <dxi-column dataField="text" width="120" caption="Комментарий"></dxi-column>
+        <dxi-column dataField="title" width="150" caption="Наш товар"></dxi-column>
+        <dxi-column dataField="productsToBuy" width="150" caption="Товар на закупку"></dxi-column>
+    </dx-data-grid>
+</div>
+<dx-load-panel
+[visible]="isLoadPanelVisible"></dx-load-panel>
